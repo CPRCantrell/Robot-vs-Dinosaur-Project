@@ -1,5 +1,5 @@
 class Compatant:
-    def __init__(self, name, health, attack_power) -> None:
+    def __init__(self, name, health, attack_power=0) -> None:
         self.name = name
         self.health = health
         self.attack_power = attack_power
