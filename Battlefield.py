@@ -1,10 +1,10 @@
-from dinosaur import Dinosaur as dr
-from robot import Robot as rt
+from compatants.dinosaurs.t_rex import TRex
+from compatants.robots.robot import Robot as rt
 
 class Battlefield:
     def __init__(self) -> None:
         self.robot = rt('Robot', 200)
-        self.dinosaur = dr('Dino', 200, 30)
+        self.dinosaur = TRex('Dino', 200, 30)
 
     def run_game(self):
         self.display_welcome()
@@ -23,4 +23,4 @@ class Battlefield:
 
     def display_winner(self):
         print(f'\n{self.dinosaur.name if self.dinosaur.health != 0 else self.robot.name} as executed {self.dinosaur.name if self.dinosaur.health == 0 else self.robot.name}!')
-        print(f'\n{self.dinosaur.name if self.dinosaur.health != 0 else self.robot.name} Won!\n')
+        print(f'{self.dinosaur.name if self.dinosaur.health != 0 else self.robot.name} Won!')
