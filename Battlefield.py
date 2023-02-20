@@ -3,10 +3,11 @@ from compatants.dinosaurs.stegosurus import Stegosurus as Steg
 from compatants.dinosaurs.pterodactyl import Pterodactyl as ptero
 from compatants.robots.gen2_sparring_bot import Gen2SparingBot as G2
 from compatants.robots.e54 import E54
+from compatants.robots.b1_268 import B1_268
 
 class Battlefield:
     def __init__(self) -> None:
-        self.robot = E54()
+        self.robot = B1_268()
         self.dinosaur = Steg()
         self.round = 1
 
