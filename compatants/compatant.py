@@ -1,5 +1,4 @@
 import random as r
-from .robots.robot import Robot
 class Compatant:
 
     def __init__(self, additional_initiative = 0) -> None:
@@ -21,7 +20,7 @@ class Compatant:
                     hit += 1
                 print(f'{compatant.name} as {compatant.health} left')
 
-                if isinstance(self, Robot):
+                try:
                     if self.multi_attack():
                         continue
                     else:
@@ -32,7 +31,7 @@ class Compatant:
                                 continue
                         else:
                             break
-                else:
+                except:
                     break
         else:
             print(f'{compatant.name} as {compatant.health} left')
