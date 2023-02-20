@@ -5,7 +5,7 @@ import random as r
 
 class Gen2SparingBot(Robot):
     def __init__(self) -> None:
-        self.model = '2nd Gen Sparring bot'
+        self.model = '2nd Gen Sparring Bot'
         self.modifiers = robots_models[self.model]['mods']
         self.evasion = self.modifiers['evade']
         super().__init__()

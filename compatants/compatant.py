@@ -10,7 +10,6 @@ class Compatant:
         if self.attack_dmg != 0:
             if r.randrange(1,101) > hit_chance:
                 print(f'{self.name} has missed {compatant.name} and has dealt no damage ({hit_chance}% chance to hit)')
-                print(f'{compatant.name} as {compatant.health} left')
             else:
                 compatant.take_dmg(self)
                 if compatant.health < 0:
@@ -20,8 +19,8 @@ class Compatant:
 
     def in_order_group(self, herd, fleet):
         in_order = []
-        in_order.extend(herd.herd)
-        in_order.extend(fleet.fleet)
+        in_order.extend(herd)
+        in_order.extend(fleet)
         for compatants in in_order:
             for position in range(len(in_order)-1):
                 compare_position = position+1

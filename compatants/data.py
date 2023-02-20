@@ -23,7 +23,7 @@ robo_base_stats = {
 }
 robot_names = ['M3gan', 'Hal', 'Fender', 'Ratchet', 'Goddard', 'Bastion']
 robots_models = {
-    '2nd Gen Sparring bot':{
+    '2nd Gen Sparring Bot':{
         'mods':{
             'fist': 10,
             'evade': .3

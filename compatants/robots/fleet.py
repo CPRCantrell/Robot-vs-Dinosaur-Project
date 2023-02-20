@@ -8,7 +8,7 @@ class Fleet:
     def __init__(self, team_size) -> None:
         self.fleet = []
         while True:
-            user_input = input('Would you like to pick your fleet? or shall we choose at random? [pick, random] : ')
+            user_input = input('\nWould you like to pick your fleet? or shall we choose at random? [pick, random] : ')
             if user_input.lower() == 'pick':
                 self.pick(team_size)
                 break
@@ -28,7 +28,7 @@ class Fleet:
     def random(self, team_size):
         self.robo_details()
         while len(self.fleet) != team_size:
-            selection = r.choice['1','2','3']
+            selection = r.choice(['1','2','3'])
             self.selection(selection)
         self.display_fleet()
 
@@ -54,7 +54,7 @@ class Fleet:
 
     def display_fleet(self):
         print('---------- Your Fleet ----------')
+        count = 1
         for robot in self.fleet:
-            count = 1
-            print(f'{count}) {robot.name} the {robot.species}')
+            print(f'{count}) {robot.name} the {robot.model}')
             count += 1

@@ -7,9 +7,9 @@ import random as r
 
 class Battlefield:
     def __init__(self) -> None:
-        even_teams = input('Would you like to make even teams? [y,n] : ')
+        even_teams = input('\nWould you like to make even teams? [y,n] : ')
         if even_teams.lower() == 'y':
-            team_size = input('Would you like set the team size? or at random between 3 to 5? [#, random]')
+            team_size = input('Would you like set the team size? or at random between 3 to 5? [#, random] : ')
             if team_size.lower() == 'random':
                 team_size = r.randrange(3,6)
                 self.herd = Herd(team_size)
@@ -18,7 +18,7 @@ class Battlefield:
                 self.herd = Herd(int(team_size))
                 self.fleet = Fleet(int(team_size))
         elif even_teams.lower() == 'n':
-            team_size = input('Would you like set the team size? or at random between 3 to 5? [set, random]')
+            team_size = input('Would you like set the team size? or at random between 3 to 5? [set, random] : ')
             if team_size.lower() == 'random':
                 self.herd = Herd(r.randrange(3,6))
                 self.fleet = Fleet(r.randrange(3,6))
@@ -45,6 +45,7 @@ class Battlefield:
                     compatant.attack(opponent)
                     if opponent.health <= 0:
                         self.herd.herd.remove(opponent)
+                        self.battle_order.remove(opponent)
                         if len(self.herd.herd) == 0:
                             break
                 elif isinstance(compatant, Dino):
@@ -52,11 +53,14 @@ class Battlefield:
                     compatant.attack(opponent)
                     if opponent.health <= 0:
                         self.fleet.fleet.remove(opponent)
+                        self.battle_order.remove(opponent)
                         if len(self.fleet.fleet) == 0:
                             break
                 print()
             self.round += 1
 
     def display_winner(self):
-        print(f'\n{self.dinosaur.name if self.dinosaur.health != 0 else self.robot.name} as executed {self.dinosaur.name if self.dinosaur.health == 0 else self.robot.name}!')
-        print(f'{self.dinosaur.name if self.dinosaur.health != 0 else self.robot.name} Won!')
+        print(f'\n{"The Herd" if len(self.herd.herd) != 0 else "The Fleet"} as executed {"the Herd" if len(self.herd.herd) != 0 else "the Fleet"}!')
+        for survivor in self.herd.herd if len(self.herd.herd) != 0 else self.fleet.fleet:
+            print(f'{survivor.name} the {survivor.species if isinstance(survivor, Dino) else survivor.model} with {survivor.health} health left')
+        print(f'These survivors are your winners Won!')
