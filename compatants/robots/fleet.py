@@ -34,9 +34,9 @@ class Fleet:
 
     def robo_details(self):
         print('---------- Robot Models ----------')
-        print(f"1) 2nd Gen Sparring Bot:\n\t-Can only use fist as a weapon but deals x{rm['2nd Gen Sparring Bot']['mods']['fist']} more damage with them\n\t-Has a base evasivness of {int(rm['2nd Gen Sparring Bot']['mods']['evade']*100)}%")
+        print(f"1) 2nd Gen Sparring Bot:\n\t-Can only use fist as a weapon but deals x{rm['2nd Gen Sparring Bot']['mods']['fist']} more damage with them and can hit bewteen 2 to {rm['2nd Gen Sparring Bot']['mods']['multi']} times\n\t-Has a base evasivness of {int(rm['2nd Gen Sparring Bot']['mods']['evade']*100)}%")
         print(f"2) B1-268:\n\t-Deals x{rm['B1-268']['mods']['power']} more damage with all weapons\n\t-Has {int((1-rm['B1-268']['mods']['accuracy'])*100)}% reduced accuracy")
-        print(f"3) E54:\n\t-When self repairing heals for {int((rm['E54']['mods']['self repair'])*100)}% of max health")
+        print(f"3) E54:\n\t-When self repairing heals for {int((rm['E54']['mods']['self repair'])*100)}% of max health\n\t-Sentry Mode: gives an weapon mulit attack {rm['E54']['mods']['sentry mode multi']} for a {int((rm['E54']['mods']['sentry mode accuracy penalty'])*100)}% accuracy penalty ({rm['E54']['mods']['sentry mode cd']} round cooldown)")
 
     def selection(self, selection):
         while True:

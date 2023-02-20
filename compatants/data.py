@@ -1,19 +1,23 @@
 weapons = {
     'DC-15A Blaster Rifle':{
         'power': 40,
-        'accuracy': .6
+        'accuracy': .6,
+        'multi': 0
     },
     'Needle Gun':{
         'power': 15,
-        'accuracy': .9
+        'accuracy': .9,
+        'multi': 2
     },
     'Fist':{
         'power': 5,
-        'accuracy': 1
+        'accuracy': 1,
+        'multi': 0
     },
     'Ray gun':{
         'power': 120,
-        'accuracy': .9
+        'accuracy': .9,
+        'multi': 0
     }
 }
 
@@ -26,6 +30,7 @@ robots_models = {
     '2nd Gen Sparring Bot':{
         'mods':{
             'fist': 10,
+            'multi': 3,
             'evade': .3
             #NOTES: Can only use fists
         }
@@ -39,6 +44,9 @@ robots_models = {
     'E54':{
         'mods':{
             'self repair': .3,
+            'sentry mode multi': 6,
+            'sentry mode cd': 3,
+            'sentry mode accuracy penalty': .2
         }
     }
 }

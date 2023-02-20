@@ -28,12 +28,27 @@ class Robot(Compatant):
     def select_weapon(self):
         name = w.select_weapon(self)
         wep = weapons[name]
-        self.equiped_weapon = w(name, wep['power'], wep['accuracy'])
+        self.equiped_weapon = w(name, wep['power'], wep['accuracy'], wep['multi'])
         self.weapon_stats()
 
     def weapon_stats(self):
         self.attack_dmg = self.equiped_weapon.power
         self.accuracy = self.equiped_weapon.accuracy
+        self.set_multi_attack(self.equiped_weapon.additional_attacks)
+
+    def set_multi_attack(self, attack_number):
+        if attack_number > 0:
+            self.m_attack = True
+            self.addition_amount = attack_number
+        else:
+            self.m_attack = False
+
+    def multi_attack(self):
+        if self.addition_amount > 0:
+            self.addition_amount -= 1
+        else:
+            self.m_attack = False
+        return self.m_attack
 
     def self_repair(self):
         self.attack_dmg = 0

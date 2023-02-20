@@ -13,9 +13,10 @@ class Gen2SparingBot(Robot):
     def select_weapon(self):
         name = 'Fist'
         wep = weapons[name]
-        self.equiped_weapon = w(name, wep['power'], wep['accuracy'])
+        self.equiped_weapon = w(name, wep['power'], wep['accuracy'], r.random(2,self.modifiers['multi']+1))
         self.attack_dmg = self.equiped_weapon.power * self.modifiers['fist']
         self.accuracy = self.equiped_weapon.accuracy
+        super().set_multi_attack(self.equiped_weapon.addition_attacks)
 
     def  hit_me(self, compatant):
         return ((compatant.accuracy * (1-self.evasion)) * 100)
