@@ -5,7 +5,8 @@ class Pterodactyl(Dinosaur):
     def __init__(self) -> None:
         self.species = 'Pterodactyl'
         self.modifiers = dino_species[self.species]['mods']
-        super().__init__()
+        self.go_first = 10
+        super().__init__(self.go_first)
 
     def evade(self):
         self.evaded = True
