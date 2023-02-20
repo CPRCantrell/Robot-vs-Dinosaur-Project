@@ -50,8 +50,7 @@ class Dinosaur(Compatant):
             if self.evade_ends == 0:
                 self.evaded = False
                 self.reset_evasion()
-        hit_chance = ((compatant.accuracy * (1-self.evasion)) * 100)
-        return hit_chance
+        return ((compatant.accuracy * (1-self.evasion)) * 100)
 
     def take_dmg(self, compatant):
         self.health -= compatant.attack_dmg

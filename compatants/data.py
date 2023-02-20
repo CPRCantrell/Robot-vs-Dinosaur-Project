@@ -1,21 +1,17 @@
 weapons = {
-    1:{
-        'name': 'DC-15A Blaster Rifle',
+    'DC-15A Blaster Rifle':{
         'power': 40,
         'accuracy': .6
     },
-    2:{
-        'name': 'Needle Gun',
+    'Needle Gun':{
         'power': 15,
         'accuracy': .9
     },
-    3:{
-        'name': 'fist',
+    'Fist':{
         'power': 5,
         'accuracy': 1
     },
-    4:{
-        'name': 'Ray gun',
+    'Ray gun':{
         'power': 120,
         'accuracy': .9
     }
@@ -23,26 +19,26 @@ weapons = {
 
 robo_base_stats = {
     'health': 250,
+    'self repair': .1
 }
 robot_names = ['M3gan', 'Hal', 'Fender', 'Ratchet', 'Goddard', 'Bastion']
-robots = {
-    'T-800':{
+robots_models = {
+    '2nd Gen Sparring bot':{
         'mods':{
-            'description': f"Has 100% accuracy no matter the weapon but can't use the same weapon twice",
-            'accuracy': 1.0
+            'fist': 10,
+            'evade': .3
+            #NOTES: Can only use fists
         }
     },
     'B1-268':{
         'mods':{
-            'description': f"Decreased accuracy by 80% but deal 1.5 times more damage",
             'accuracy': .8,
             'power': 1.5
         }
     },
     'E54':{
         'mods':{
-            'description': f"Able to heal 20% of health but can't attack when healing",
-            'healing': .2
+            'self-repair': .3,
         }
     }
 }

@@ -7,15 +7,13 @@ class Compatant:
 
     def attack(self, compatant):
         hit_chance = compatant.hit_me(self)
-        if r.randrange(1,101) > hit_chance:
-            print(f'{self.name} has missed {compatant.name} and has dealt no damage ({hit_chance}% chance to hit)')
-            print(f'{compatant.name} as {compatant.health} left')
-        else:
-            if self.attack_dmg != 0:
+        if self.attack_dmg != 0:
+            if r.randrange(1,101) > hit_chance:
+                print(f'{self.name} has missed {compatant.name} and has dealt no damage ({hit_chance}% chance to hit)')
+                print(f'{compatant.name} as {compatant.health} left')
+            else:
                 compatant.take_dmg(self)
                 if compatant.health < 0:
                     compatant.health = int(0)
                 print(f'{self.name} has dealt {self.attack_dmg} damage to {compatant.name}')
-                print(f'{compatant.name} as {compatant.health} left')
-            else:
-                print(f'{compatant.name} as {compatant.health} left')
+        print(f'{compatant.name} as {compatant.health} left')

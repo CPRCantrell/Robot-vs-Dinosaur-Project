@@ -8,4 +8,4 @@ class Weapon:
         self.accuracy = accuracy
 
     def select_weapon(self):
-        return weapons[r.choice(list(weapons.keys()))]
+        return r.choice(list(weapons.keys()))
