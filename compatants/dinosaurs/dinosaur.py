@@ -53,4 +53,4 @@ class Dinosaur(Compatant):
         return ((compatant.accuracy * (1-self.evasion)) * 100)
 
     def take_dmg(self, compatant):
-        self.health -= compatant.attack_dmg
+        self.health -= int(compatant.attack_dmg)

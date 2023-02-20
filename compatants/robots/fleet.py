@@ -50,7 +50,7 @@ class Fleet:
                 self.fleet.append(E54())
                 break
             else:
-                input(f'{selection} was an invalid entry. Valid entries [1,2,3] : ')
+                selection = input(f'{selection} was an invalid entry. Valid entries [1,2,3] : ')
 
     def display_fleet(self):
         print('---------- Your Fleet ----------')

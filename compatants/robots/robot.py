@@ -34,7 +34,7 @@ class Robot(Compatant):
     def weapon_stats(self):
         self.attack_dmg = self.equiped_weapon.power
         self.accuracy = self.equiped_weapon.accuracy
-        self.set_multi_attack(self.equiped_weapon.additional_attacks)
+        self.set_multi_attack(self.equiped_weapon.addition_attacks)
 
     def set_multi_attack(self, attack_number):
         if attack_number > 0:

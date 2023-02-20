@@ -6,7 +6,9 @@ class Compatant:
         self.initiative = r.randrange(1,11) + additional_initiative
 
     def attack(self, compatant):
-        hit_chance = int(compatant.hit_me(self))
+        try:
+            hit_chance = int(compatant.hit_me(self))
+        except: hit_chance = 0
         if self.attack_dmg != 0:
             hit = 0
             while True:
@@ -29,6 +31,8 @@ class Compatant:
                                 self.equiped_weapon.blast(self)
                                 hit_chance = 100
                                 continue
+                            else:
+                                break
                         else:
                             break
                 except:
@@ -40,12 +44,16 @@ class Compatant:
         in_order = []
         in_order.extend(herd)
         in_order.extend(fleet)
-        for compatants in in_order:
-            for position in range(len(in_order)-1):
-                compare_position = position+1
-                compare = in_order[compare_position]
-                if compatants.initiative < compare.initiative:
+        for position in range(len(in_order)):
+            for sort in range(position,len(in_order)):
+                if in_order[position].initiative < in_order[sort].initiative:
                     temp = in_order[position]
-                    in_order[position] = in_order[compare_position]
-                    in_order[compare_position] = temp
+                    in_order[position] = in_order[sort]
+                    in_order[sort] = temp
+                elif in_order[position].initiative == in_order[sort].initiative:
+                    in_order[position].initiative += r.choice([-1,1])
+                    if in_order[position].initiative < in_order[sort].initiative:
+                        temp = in_order[position]
+                        in_order[position] = in_order[sort]
+                        in_order[sort] = temp
         return in_order
