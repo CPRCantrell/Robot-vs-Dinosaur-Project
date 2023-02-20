@@ -26,7 +26,7 @@ class Robot(Compatant):
         super().attack(compatant)
 
     def select_weapon(self):
-        name = w.select_weapon()
+        name = w.select_weapon(self)
         wep = weapons[name]
         self.equiped_weapon = w(name, wep['power'], wep['accuracy'])
         self.attack_dmg = self.equiped_weapon.power

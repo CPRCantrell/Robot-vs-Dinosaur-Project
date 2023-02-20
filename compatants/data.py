@@ -38,7 +38,7 @@ robots_models = {
     },
     'E54':{
         'mods':{
-            'self-repair': .3,
+            'self repair': .3,
         }
     }
 }
