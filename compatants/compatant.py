@@ -17,3 +17,17 @@ class Compatant:
                     compatant.health = int(0)
                 print(f'{self.name} has dealt {self.attack_dmg} damage to {compatant.name}')
         print(f'{compatant.name} as {compatant.health} left')
+
+    def in_order_group(self, herd, fleet):
+        in_order = []
+        in_order.extend(herd.herd)
+        in_order.extend(fleet.fleet)
+        for compatants in in_order:
+            for position in range(len(in_order)-1):
+                compare_position = position+1
+                compare = in_order[compare_position]
+                if compatants.initiative < compare.initiative:
+                    temp = in_order[position]
+                    in_order[position] = in_order[compare_position]
+                    in_order[compare_position] = temp
+        return in_order
