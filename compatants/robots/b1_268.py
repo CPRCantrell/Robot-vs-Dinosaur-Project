@@ -10,9 +10,6 @@ class B1_268(Robot):
         self.evasion = self.modifiers['evade']
         super().__init__()
 
-    def select_weapon(self):
-        name = w.select_weapon(self)
-        wep = weapons[name]
-        self.equiped_weapon = w(name, wep['power'], wep['accuracy'])
+    def weapon_stats(self):
         self.attack_dmg = self.equiped_weapon.power * self.modifiers['power']
         self.accuracy = self.equiped_weapon.accuracy * self.modifiers['accuracy']

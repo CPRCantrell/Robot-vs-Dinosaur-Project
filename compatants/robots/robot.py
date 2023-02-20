@@ -29,6 +29,9 @@ class Robot(Compatant):
         name = w.select_weapon(self)
         wep = weapons[name]
         self.equiped_weapon = w(name, wep['power'], wep['accuracy'])
+        self.weapon_stats()
+
+    def weapon_stats(self):
         self.attack_dmg = self.equiped_weapon.power
         self.accuracy = self.equiped_weapon.accuracy
 
