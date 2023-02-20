@@ -1,10 +1,13 @@
 from compatants.dinosaurs.t_rex import TRex
+from compatants.dinosaurs.stegosurus import Stegosurus as Steg
+from compatants.dinosaurs.pterodactyl import Pterodactyl as ptero
 from compatants.robots.robot import Robot as rt
 
 class Battlefield:
     def __init__(self) -> None:
-        self.robot = rt('Robot', 200)
-        self.dinosaur = TRex('Dino', 200, 30)
+        self.robot = rt()
+        self.dinosaur = Steg()
+        self.round = 1
 
     def run_game(self):
         self.display_welcome()
@@ -16,10 +19,13 @@ class Battlefield:
 
     def battle_phase(self):
         while self.robot.health != 0 and self.dinosaur.health != 0:
+            print(f'---------- Round {self.round} ----------')
             self.robot.attack(self.dinosaur)
             if self.dinosaur.health == 0:
                 break
+            print()
             self.dinosaur.attack(self.robot)
+            self.round += 1
 
     def display_winner(self):
         print(f'\n{self.dinosaur.name if self.dinosaur.health != 0 else self.robot.name} as executed {self.dinosaur.name if self.dinosaur.health == 0 else self.robot.name}!')

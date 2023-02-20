@@ -11,7 +11,8 @@ weapons = {
     },
     3:{
         'name': 'fist',
-        'power': 5
+        'power': 5,
+        'accuracy': 1
     },
     4:{
         'name': 'Ray gun',
@@ -20,54 +21,61 @@ weapons = {
     }
 }
 
+robo_base_stats = {
+    'health': 250,
+}
 robot_names = ['M3gan', 'Hal', 'Fender', 'Ratchet', 'Goddard', 'Bastion']
-
 robots = {
-    1:{
-        'model': 'T-800',
-        'balance':{
+    'T-800':{
+        'mods':{
             'description': f"Has 100% accuracy no matter the weapon but can't use the same weapon twice",
             'accuracy': 1.0
         }
     },
-    2:{
-        'model': 'B1-268',
-        'balance':{
+    'B1-268':{
+        'mods':{
             'description': f"Decreased accuracy by 80% but deal 1.5 times more damage",
             'accuracy': .8,
             'power': 1.5
         }
     },
-    3:{
-        'model': 'E54',
-        'balance':{
+    'E54':{
+        'mods':{
             'description': f"Able to heal 20% of health but can't attack when healing",
             'healing': .2
         }
     }
 }
 
+dino_base_stats = {
+    'health': 250,
+    'power': 50,
+    'accuracy': .9,
+    'evassion': 0,
+    'evade turns': 2,
+    'evade move': .3,
+}
 dino_names = ['Aladar','Neera','Petrie', 'Spike','Blue','Butch']
-
-dino = {
+dino_species = {
     'T-Rex':{
         'mods':{
-            'Bite': 3
+            'bite': 3,
+            'initiative': 1
         }
     },
-    2:{
-        'model': 'Stegosurus',
-        'balance':{
-            'description': f"Swing attack hits multiple enemy's dealing even damage to each",
-            'health': 100
+    'Stegosurus':{
+        'mods':{
+            'tail': 1.5,
+            'plating': .1,
+            'health': 75
         }
     },
-    3:{
-        'model': 'Pterodactyl',
-        'balance':{
-            'description': f"High evasiveness, but lower health",
-            'evasion': .3,
-            'health': -100
+    'Pterodactyl':{
+        'mods':{
+            'evade move': .5,
+            'base evasion': .2,
+            'evade turns': 1, # + base
+            'health': -75
         }
     }
 }
