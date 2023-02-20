@@ -6,7 +6,7 @@ class Compatant:
         self.initiative = r.randrange(1,11) + additional_initiative
 
     def attack(self, compatant):
-        hit_chance = compatant.hit_me(self)
+        hit_chance = int(compatant.hit_me(self))
         if self.attack_dmg != 0:
             if r.randrange(1,101) > hit_chance:
                 print(f'{self.name} has missed {compatant.name} and has dealt no damage ({hit_chance}% chance to hit)')
