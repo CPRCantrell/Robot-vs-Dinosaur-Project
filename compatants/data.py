@@ -63,23 +63,23 @@ dino_names = ['Aladar','Neera','Petrie', 'Spike','Blue','Butch']
 dino_species = {
     'T-Rex':{
         'mods':{
-            'bite': 3,
+            'bite': 4,
             'initiative': 2
         }
     },
     'Stegosurus':{
         'mods':{
-            'tail': 1.5,
-            'plating': .1,
-            'health': 75
+            'tail': 2,
+            'plating': .2,
+            'health': 100
         }
     },
     'Pterodactyl':{
         'mods':{
-            'evade move': .6,
-            'base evasion': .2,
+            'evade move': .7,
+            'base evasion': .3,
             'evade turns': 1, # + base
-            'health': -75
+            'health': -50
         }
     }
 }
