@@ -56,7 +56,7 @@ dino_species = {
     'T-Rex':{
         'mods':{
             'bite': 3,
-            'initiative': 1
+            'initiative': 2
         }
     },
     'Stegosurus':{
@@ -68,7 +68,7 @@ dino_species = {
     },
     'Pterodactyl':{
         'mods':{
-            'evade move': .5,
+            'evade move': .6,
             'base evasion': .2,
             'evade turns': 1, # + base
             'health': -75
