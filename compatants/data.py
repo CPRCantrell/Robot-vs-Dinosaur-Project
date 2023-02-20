@@ -33,7 +33,7 @@ robots_models = {
     'B1-268':{
         'mods':{
             'accuracy': .8,
-            'power': 1.5
+            'power': 2
         }
     },
     'E54':{
